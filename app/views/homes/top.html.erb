@@ -15,10 +15,10 @@
     </div>
   </div>
 </div>
-<div class="container"> 
-  <div class="row justify-content-center mt-5"> 
+<div class="container">
+  <div class="row justify-content-center mt-5">
     <div class="col-sm-8 text-center" style="border-right: 15px solid; border-bottom: 3px solid;">
-      <%= image_tag("logo.png") %> 
+      <%= image_tag("logo.png") %>
     </div>
     <div class="col-sm-1" style="border-bottom: 3px solid #A0522D;"></div>
   </div>
@@ -52,36 +52,34 @@
       <h2 style="border-bottom: 10px solid;">Ranking</h2>
     </div>
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mx-5">
     <% @rankings.each.with_index(1) do |bean, i| %>
       <div class="col-sm-4 text-center">
-        <p style="font-size: 20px;"><%= i %> 位</p>
-        <%= link_to attachment_image_tag(bean, :image, class: "prev-rank", style: "width: 100%; height: 300px;", fallback: "no-image.jpg"), bean_path(bean) %>
-        <div class="py-2 mb-5 bg-light text-dark" style="font-size: 20px;">
+        <p style="font-size: 15px;"><%= i %> 位</p>
+        <%= link_to attachment_image_tag(bean, :image, class: "prev-rank", style: "width: 250px; height: 250px;", fallback: "no-image.jpg"), bean_path(bean) %>
+        <div class="py-2 mb-5" style="font-size: 15px;">
           <%= bean.name %><br />
           もらったいいね数：<%= bean.favorites.count %><br />
-          <p style="font-size: 15px;"><%= link_to bean.user.name, user_path(bean.user), class: "btn-sm btn-outline-dark",style: "text-decoration: underline;" %>さんの紹介</p>
+          <p style="font-size: 15px;"><%= link_to bean.user.name, user_path(bean.user), class: "btn-sm btn-outline-light",style: "text-decoration: underline;" %>さんの紹介</p>
         </div>
       </div>
-    <% end %> 
+    <% end %>
   </div>
-</div> 
+</div>
 <div class="container my-5">
   <div class="row justify-content-center mb-5">
     <div class="col-sm-8">
       <h2 style="border-bottom: 10px solid;">Register</h2>
-    </div> 
+    </div>
   </div>
   <div class="row justify-content-center">
-    <div class="inview_re fadeIn_top"> 
+    <div class="inview_re fadeIn_top">
       <%= image_tag("top.jpg") %>
-      <div>会員登録をすれば、美味しいと感じたコーヒーの紹介や<br>同じ嗜好を持った仲間とコミュニケーションが取れます。</div>
+      <div>会員登録をすると、美味しいと感じたコーヒーの紹介や<br>同じ嗜好を持った仲間とのコミュニケーションが取れます。</div>
       <%= link_to new_user_registration_path, class: "text-light" do %>
         <p>会員登録はこちらからお願いします▶︎</p>
       <% end %>
     </div>
   </div>
 </div>
-<footer class="footer">
-</footer>
-
+<%= render "layouts/top_footer" %>

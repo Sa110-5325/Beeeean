@@ -1,0 +1,35 @@
+<footer class="footer navbar-expand-lg navbar-dark" >
+  <div class="container">
+    <div class="row py-3" style="border-bottom: 1px solid #222222">
+        <%= image_tag "logo.png", :size => "170x60" %>
+    </div>
+    <div class="row justify-content-center py-3" style="border-bottom: 1px solid #222222">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-center">
+          <% if user_signed_in? %>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Top', root_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'About', about_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Post', new_bean_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Beans', beans_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'My Page', user_path(current_user.id),class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Log Out', destroy_user_session_path,class: "text-light", method: :delete%></li>
+          <% else %>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Top', root_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'About', about_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Sign Up', new_user_registration_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Log In', new_user_session_path,class: "text-light" %></li>
+            <li class="mx-5" style="font-size: 20px;"><%= link_to 'Guest', users_guest_sign_in_path,class: "text-light", method: :post %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-2">
+      ©︎2020-2021 Takafumeeee!!!.
+    </div>
+  </div>
+</footer>
