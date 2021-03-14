@@ -4,7 +4,7 @@
       <%= render "layouts/sidebar" %>
     </div>
     <div class="col-sm-7 mt-5">
-      <% if @chat.present? %>
+      <% if @users.present? %>
         <h4 class="text-center">チャット中</h4>
         <% @users.each do |user| %>
           <div class="row my-4">
@@ -20,16 +20,16 @@
           </div>
         <% end %>
       <% else %>
-      <div class="row justify-content-center">
-        チャット中のユーザーはいません
-      </div>
-      <div class="row justify-content-center">
-        <%= link_to beans_path, class: "btn-sm btn-outline-light" do %>
-          <i class="fas fa-hand-holding-heart"></i>　見つけましょう
-        <% end %>
-      </div>
+        <div class="row justify-content-center">
+          チャット中のユーザーはいません
+        </div>
+        <div class="row justify-content-center">
+          <%= link_to beans_path, class: "btn-sm btn-outline-light" do %>
+            <i class="fas fa-hand-holding-heart"></i>　見つけましょう
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
-  
+
 </div>
