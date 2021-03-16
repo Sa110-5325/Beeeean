@@ -428,6 +428,12 @@ transform: rotate(-45deg);
   height: 50px;
   text-decoration: none;
 }
+
+#page_top a:hover {
+  opacity: 0.5;
+
+}
+
 #page_top a::before{
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
