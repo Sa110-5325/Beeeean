@@ -67,16 +67,16 @@
 <% if user_signed_in? %>
   <div class="row justify-content-center my-5">
     <div class="col-sm-2 text-center">
-      <%= link_to "Post", new_bean_path, class: "btn btn-outline-light", style: "border-radius: 20px; font-size: 20px;" %>
+      <%= link_to "Post", new_bean_path, class: "btn btn-outline-light", style: "font-size: 20px;" %>
     </div>
   </div>
   <% else %>
   <div class="row justify-content-center my-5">
     <div class="col-sm-2 text-center">
-      <%= link_to "SignUp", new_user_registration_path, class: "btn btn-outline-light", style: "border-radius: 20px;" %>
+      <%= link_to "SignUp", new_user_registration_path, class: "btn btn-outline-light" %>
     </div><br />
     <div class="col-sm-2 text-center">
-      <%= link_to "Log In", new_user_session_path, class: "btn btn-outline-light", style: "border-radius: 20px;" %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-outline-light" %>
     </div>
   </div>
 <% end %>
